@@ -18,18 +18,20 @@ class veiculo {
     chassi,
     tipo_combustivel,
   ) {
-    // validando a placa, deve coonter exatamnete 7 caracteres 
-    if (!placa || String(placa).trim().length !== 7){
-        throw new Error ("A placa teve ter 7 caracteres")
+    // validando a placa, deve coonter exatamnete 7 caracteres
+    if (!placa || String(placa).trim().length !== 7) {
+      throw new Error("A placa teve ter 7 caracteres");
     }
     // validando o ano_modelo,  deve conter exatamente 4 caracter e todas numericos
-    if (!ano_modelo || String(ano_modelo).trim().length !== 4 ){
-        throw new Error ("O ano deve conter quatro caracteres NUMERICOS!!")
+    if (!ano_modelo || String(ano_modelo).trim().length !== 4) {
+      throw new Error("O ano deve conter quatro caracteres NUMERICOS!!");
     }
-    if (!ano_modelo || /^\d{11}$/.test (String (ano_modelo).trim()))
-
-    if (chassi && String(chassi).trim().length !== 17){
-        throw new Error ("O chassi deve conter 17 caracteres")
+    if (!ano_modelo || /^\d{11}$/.test(String(ano_modelo).trim()))
+      if (chassi && String(chassi).trim().length !== 17) {
+        throw new Error("O chassi deve conter 17 caracteres");
+      }
+    if (!tipo_combustivel || String(tipo_combustivel).trim() === "") {
+      throw new Error("O tipo de combustível é obrigatório.");
     }
     this.#idveiculo = idveiculo;
     this.#placa = placa;

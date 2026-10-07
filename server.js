@@ -1,14 +1,14 @@
 import 'dotenv/config'; // DEVE SER A PRIMEIRA LINHA DO ARQUIVO
 import express from 'express';
 import usuarioRoutes from './src/routers/usuarioRoute.js';
+import veiculoRoutes from './src/routers/veiculoRouter.js';
 const app = express();
 
 app.use(express.json());
 
-// Registra as rotas
 app.use('/usuarios', usuarioRoutes);
+app.use('/veiculos', veiculoRoutes);
 
-// Pega a porta do .env ou usa a 3000 como padrão
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
